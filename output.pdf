@@ -1,0 +1,369 @@
+PS C:\> python data.py Titanic-Dataset.csv       
+Loading data from Titanic-Dataset.csv ...
+
+Preprocessing complete. Columns after preprocessing:
+
+['PassengerId', 'Survived', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked', 'Name_Braund, Mr. Owen Harris', 'Name_Cumings, Mrs. John Bradley (Florence Briggs Thayer)', 'Name_Futrelle, Mrs. Jacques Heath (Lily May Peel)', 'Name_Heikkinen, Miss. Laina', 'Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)', 'Name_McCarthy, Mr. Timothy J', 'Name_Moran, Mr. James', 'Name_Nasser, Mrs. Nicholas (Adele Achem)', 'Name_Palsson, Master. Gosta Leonard', 'Name_other', 'Ticket_1601', 'Ticket_19950', 'Ticket_3101295', 'Ticket_347082', 'Ticket_347088', 'Ticket_382652', 'Ticket_CA 2144', 'Ticket_CA. 2343', 'Ticket_S.O.C. 14879', 'Ticket_other', 'Cabin_C123', 'Cabin_C22 C26', 'Cabin_C23 C25 C27', 'Cabin_C83', 'Cabin_D', 'Cabin_E101', 'Cabin_F2', 'Cabin_F33', 'Cabin_G6', 'Cabin_other']
+
+====== DESCRIPTIVE ANALYSIS ======
+
+Dataset shape: 891 rows, 39 columns
+
+                                                    count unique    top  ...      50%    75%       max
+PassengerId                                         891.0    NaN    NaN  ...    446.0  668.5     891.0
+Survived                                            891.0    NaN    NaN  ...      0.0    1.0       1.0
+Pclass                                              891.0    NaN    NaN  ...      3.0    3.0       3.0
+Sex                                                 891.0    NaN    NaN  ...      1.0    1.0       1.0
+Age                                                 714.0    NaN    NaN  ...     28.0   38.0      80.0
+SibSp                                               891.0    NaN    NaN  ...      0.0    1.0       8.0
+Parch                                               891.0    NaN    NaN  ...      0.0    0.0       6.0
+Fare                                                891.0    NaN    NaN  ...  14.4542   31.0  512.3292
+Embarked                                            891.0    NaN    NaN  ...      2.0    2.0       2.0
+Name_Braund, Mr. Owen Harris                          891      2  False  ...      NaN    NaN       NaN
+Name_Cumings, Mrs. John Bradley (Florence Brigg...    891      2  False  ...      NaN    NaN       NaN
+Name_Futrelle, Mrs. Jacques Heath (Lily May Peel)     891      2  False  ...      NaN    NaN       NaN
+Name_Heikkinen, Miss. Laina                           891      2  False  ...      NaN    NaN       NaN
+Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmin...    891      2  False  ...      NaN    NaN       NaN
+Name_McCarthy, Mr. Timothy J                          891      2  False  ...      NaN    NaN       NaN
+Name_Moran, Mr. James                                 891      2  False  ...      NaN    NaN       NaN
+Name_Nasser, Mrs. Nicholas (Adele Achem)              891      2  False  ...      NaN    NaN       NaN
+Name_Palsson, Master. Gosta Leonard                   891      2  False  ...      NaN    NaN       NaN
+Name_other                                            891      2   True  ...      NaN    NaN       NaN
+Ticket_1601                                           891      2  False  ...      NaN    NaN       NaN
+Ticket_19950                                          891      2  False  ...      NaN    NaN       NaN
+Ticket_3101295                                        891      2  False  ...      NaN    NaN       NaN
+Ticket_347082                                         891      2  False  ...      NaN    NaN       NaN
+Ticket_347088                                         891      2  False  ...      NaN    NaN       NaN
+Ticket_382652                                         891      2  False  ...      NaN    NaN       NaN
+Ticket_CA 2144                                        891      2  False  ...      NaN    NaN       NaN
+Ticket_CA. 2343                                       891      2  False  ...      NaN    NaN       NaN
+Ticket_S.O.C. 14879                                   891      2  False  ...      NaN    NaN       NaN
+Ticket_other                                          891      2   True  ...      NaN    NaN       NaN
+Cabin_C123                                            891      2  False  ...      NaN    NaN       NaN
+Cabin_C22 C26                                         891      2  False  ...      NaN    NaN       NaN
+Cabin_C23 C25 C27                                     891      2  False  ...      NaN    NaN       NaN
+Cabin_C83                                             891      2  False  ...      NaN    NaN       NaN
+Cabin_D                                               891      2  False  ...      NaN    NaN       NaN
+Cabin_E101                                            891      2  False  ...      NaN    NaN       NaN
+Cabin_F2                                              891      2  False  ...      NaN    NaN       NaN
+Cabin_F33                                             891      2  False  ...      NaN    NaN       NaN
+Cabin_G6                                              891      2  False  ...      NaN    NaN       NaN
+Cabin_other                                           891      2   True  ...      NaN    NaN       NaN
+
+[39 rows x 11 columns]
+
+Value counts for each column:
+
+PassengerId:
+PassengerId
+1      1
+2      1
+3      1
+4      1
+5      1
+      ..
+887    1
+888    1
+889    1
+890    1
+891    1
+Name: count, Length: 891, dtype: int64
+
+Survived:
+Survived
+0    549
+1    342
+Name: count, dtype: int64
+
+Pclass:
+Pclass
+3    491
+1    216
+2    184
+Name: count, dtype: int64
+
+Sex:
+Sex
+1    577
+0    314
+Name: count, dtype: int64
+
+Age:
+Age
+24.00    30
+22.00    27
+18.00    26
+28.00    25
+30.00    25
+         ..
+24.50     1
+0.67      1
+0.42      1
+34.50     1
+74.00     1
+Name: count, Length: 88, dtype: int64
+
+SibSp:
+SibSp
+0    608
+1    209
+2     28
+4     18
+3     16
+8      7
+5      5
+Name: count, dtype: int64
+
+Parch:
+Parch
+0    678
+1    118
+2     80
+5      5
+3      5
+4      4
+6      1
+Name: count, dtype: int64
+
+Fare:
+Fare
+8.0500     43
+13.0000    42
+7.8958     38
+7.7500     34
+26.0000    31
+           ..
+13.8583     1
+50.4958     1
+5.0000      1
+9.8458      1
+10.5167     1
+Name: count, Length: 248, dtype: int64
+
+Embarked:
+Embarked
+ 2    644
+ 0    168
+ 1     77
+-1      2
+Name: count, dtype: int64
+
+Name_Braund, Mr. Owen Harris:
+Name_Braund, Mr. Owen Harris
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Cumings, Mrs. John Bradley (Florence Briggs Thayer):
+Name_Cumings, Mrs. John Bradley (Florence Briggs Thayer)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Futrelle, Mrs. Jacques Heath (Lily May Peel):
+Name_Futrelle, Mrs. Jacques Heath (Lily May Peel)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Heikkinen, Miss. Laina:
+Name_Heikkinen, Miss. Laina
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg):
+Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_McCarthy, Mr. Timothy J:
+Name_McCarthy, Mr. Timothy J
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Moran, Mr. James:
+Name_Moran, Mr. James
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Nasser, Mrs. Nicholas (Adele Achem):
+Name_Nasser, Mrs. Nicholas (Adele Achem)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Palsson, Master. Gosta Leonard:
+Name_Palsson, Master. Gosta Leonard
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_other:
+Name_other
+True     881
+False     10
+Name: count, dtype: int64
+
+Ticket_1601:
+Ticket_1601
+False    884
+True       7
+Name: count, dtype: int64
+
+Ticket_19950:
+Ticket_19950
+False    887
+True       4
+Name: count, dtype: int64
+
+Ticket_3101295:
+Ticket_3101295
+False    885
+True       6
+Name: count, dtype: int64
+
+Ticket_347082:
+Ticket_347082
+False    884
+True       7
+Name: count, dtype: int64
+
+Ticket_347088:
+Ticket_347088
+False    885
+True       6
+Name: count, dtype: int64
+
+Ticket_382652:
+Ticket_382652
+False    886
+True       5
+Name: count, dtype: int64
+
+Ticket_CA 2144:
+Ticket_CA 2144
+False    885
+True       6
+Name: count, dtype: int64
+
+Ticket_CA. 2343:
+Ticket_CA. 2343
+False    884
+True       7
+Name: count, dtype: int64
+
+Ticket_S.O.C. 14879:
+Ticket_S.O.C. 14879
+False    886
+True       5
+Name: count, dtype: int64
+
+Ticket_other:
+Ticket_other
+True     834
+False     57
+Name: count, dtype: int64
+
+Cabin_C123:
+Cabin_C123
+False    889
+True       2
+Name: count, dtype: int64
+
+Cabin_C22 C26:
+Cabin_C22 C26
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_C23 C25 C27:
+Cabin_C23 C25 C27
+False    887
+True       4
+Name: count, dtype: int64
+
+Cabin_C83:
+Cabin_C83
+False    889
+True       2
+Name: count, dtype: int64
+
+Cabin_D:
+Cabin_D
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_E101:
+Cabin_E101
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_F2:
+Cabin_F2
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_F33:
+Cabin_F33
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_G6:
+Cabin_G6
+False    887
+True       4
+Name: count, dtype: int64
+
+Cabin_other:
+Cabin_other
+True     860
+False     31
+Name: count, dtype: int64
+
+
+EDA charts will be saved in: eda_charts/
+
+Charts saved. Review them for visual insights.
+
+
+====== PREDICTIVE ANALYSIS ======
+
+Random Forest Classifier - Accuracy: 0.83
+
+              precision    recall  f1-score   support
+
+           0       0.83      0.89      0.86       105
+           1       0.82      0.74      0.78        74
+
+    accuracy                           0.83       179
+   macro avg       0.83      0.81      0.82       179
+weighted avg       0.83      0.83      0.83       179
+
+Confusion Matrix:
+ [[93 12]
+ [19 55]]
+Top features influencing prediction:
+
+Sex            0.226272
+PassengerId    0.203007
+Fare           0.182191
+Age            0.168394
+Pclass         0.068226
+SibSp          0.033882
+Embarked       0.032671
+dtype: float64
+
+====== PRESCRIPTIVE ANALYSIS ======
+
+Actionable Insights:
+- The most influential features for predicting area safety are: Sex, PassengerId, Fare.
+- To improve safety, focus on improving these aspects in at-risk areas.
+- For example, if 'Number of wine shops' or 'surveillance' features are high-impact, interventions there may yield better safety outcomes.
